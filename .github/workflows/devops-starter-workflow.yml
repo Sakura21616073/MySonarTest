@@ -44,9 +44,10 @@ jobs:
     - uses: action/checkout@v2
       with:
         fetch-depth: 0
-    - uses: sonarsource/sonarqube-scan-action@master
-      env:
-        SONAR_TOKEN: ${{  secrets.SONAR_TOKEN }}
+      
+    #- uses: sonarsource/sonarqube-scan-action@master
+    #  env:
+    #    SONAR_TOKEN: ${{  secrets.SONAR_TOKEN }}
 
     # Uploading unit test results to artifact store
     - name: Upload unit test results to Artifact
