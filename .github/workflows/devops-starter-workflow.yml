@@ -41,7 +41,7 @@ jobs:
         py.cleanup Tests/
 
 
-    - uses: action/checkout@v3
+    - uses: actions/checkout@v2
       with:
         fetch-depth: 0
       
