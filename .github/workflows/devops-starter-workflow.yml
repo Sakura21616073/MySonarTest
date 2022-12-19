@@ -13,7 +13,7 @@ env:
   HOSTINGPLANNAME: "MySonarTest-plan"
   APPINSIGHTLOCATION: "South Central US"
   SKU: "S1 Standard"
-  SONAR_HOST_URL: "http://20.247.38.137"
+  SONAR_HOST_URL: "http://20.247.38.137/"
 
 jobs:
   Build:
@@ -44,10 +44,9 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-      
-    #- uses: sonarsource/sonarqube-scan-action@master
-    #  env:
-    #    SONAR_TOKEN: ${{  secrets.SONAR_TOKEN }}
+    - uses: sonarsource/sonarqube-scan-action@master
+      env:
+        SONAR_TOKEN: ${{  secrets.SONAR_TOKEN }}
 
     # Uploading unit test results to artifact store
     - name: Upload unit test results to Artifact
